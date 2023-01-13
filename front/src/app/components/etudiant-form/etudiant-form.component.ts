@@ -63,10 +63,6 @@ export class EtudiantFormComponent implements OnInit {
     this.etudiantService.saveEtudiant(objectToSubmit).then(() => {
       this.router.navigate(['./members'])
     });
-    //then : ki jeni l retour chnou bch na3mel ?
-
-    //thread dinamou du web
-    // this.instanceclassservice.methodeservice.then((eli jeni )=>{retour})
   }
 
 
