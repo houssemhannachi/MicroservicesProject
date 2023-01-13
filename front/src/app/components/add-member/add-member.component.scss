@@ -1,0 +1,22 @@
+.example-card {
+  max-width: 440px;
+  margin: auto;
+  padding-bottom: 40px;
+}
+.card {
+  padding: 30px;
+  height: auto;
+  width: auto;
+}
+
+mat-card-header {
+  place-content: center;
+}
+mat-card-subtitle{
+  text-align: center;
+}
+
+mat-card-actions{
+  text-align-last: center;
+}
+
