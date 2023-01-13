@@ -28,6 +28,7 @@ public class AccountServiceImpl implements AccountService{
     public AppUser addNewUser(AppUser appUser) {
         String pw = appUser.getPassword();
         appUser.setPassword(passwordEncoder.encode(pw));
+        appUser.setRole(appRoleRepo.findAppRoleByRoleName("Member"));
         return appUserRepo.save(appUser);
     }
 

@@ -8,11 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Publication" />
-        <module name="ConfigServer" />
         <module name="Registryservice" />
         <module name="GatewayApplication" />
-        <module name="Membre" />
+        <module name="ConfigServer" />
         <module name="Auth" />
+        <module name="Membre" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

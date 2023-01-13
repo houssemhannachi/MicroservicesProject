@@ -43,21 +43,14 @@ export class MembersComponent implements OnInit {
   }
 
   ONDelete(id: string): void {
-
-    //ouvrir boite
-    // attendre le retour d'utilsiateur
-    // si oui on supprime
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {});
-    // nestana fel after closed
     dialogRef.afterClosed().subscribe(resultat => {
       if (resultat) {
         this.memberService.deleteMemberById(id).then(() => {
         })
         this.fetchData();
       }
-    })
-
-    ;
+    });
   }
 
   applyFilter(event: Event) {
