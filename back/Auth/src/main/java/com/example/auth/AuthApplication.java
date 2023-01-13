@@ -10,7 +10,7 @@ import org.springframework.security.crypto.bcrypt.*;
 import org.springframework.security.crypto.password.*;
 
 @SpringBootApplication
-public class AuthApplication implements CommandLineRunner {
+public class AuthApplication  {
 
     @Autowired
     AccountService accountService;
@@ -24,14 +24,4 @@ public class AuthApplication implements CommandLineRunner {
         return new BCryptPasswordEncoder();
     }
 
-    public void run(String... args) throws Exception {
-        accountService.addNewRole(new AppRole("Member"));
-        accountService.addNewRole(new AppRole("Admin"));
-
-        accountService.addNewUser(new AppUser("houssem","123",null,1L));
-        accountService.addNewUser(new AppUser("aymen","123",null,2L));
-
-        accountService.addRoleToUser("houssem","Member");
-        accountService.addRoleToUser("Aymen","Admin");
-    }
 }

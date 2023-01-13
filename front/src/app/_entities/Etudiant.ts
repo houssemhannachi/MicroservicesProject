@@ -1,4 +1,5 @@
 export class Etudiant {
+  id?:number;
   cin?: String;
   createdDate: String | undefined;
   cv: String | undefined;

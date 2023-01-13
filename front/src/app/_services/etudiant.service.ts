@@ -15,12 +15,10 @@ export class EtudiantService {
     //req http t7el thread fel front o t7outou en ecoute lel les echanges eli ysirou fel back kima mail makhdoum bel observable
     const etudiantNew = {
       ...etudiant,
-      id: etudiant.id ?? Math.ceil(Math.random() * 10000).toString(),
+      id: etudiant.id,
       createdDate: etudiant.createdDate ?? new Date().toISOString(),
     }
-    this.httpClient.post<Etudiant>('/server/MEMBRE-SERVICE/membres/addEtudiant', etudiant).toPromise()
-    return (new Promise(resolve => resolve(etudiantNew)))
-
+    return this.httpClient.post<Etudiant>('/server/MEMBRE-SERVICE/membres/addEtudiant', etudiant).toPromise()
   }
   getEtudiantByid(id: string): Promise<Member> {
     // this.httpClient.get<Member>('adresseipduback').toPromise();a

@@ -13,7 +13,6 @@ export class MemberService {
   public tab: Member[] | undefined;
 
   constructor(private httpClient: HttpClient) {
-
   }
 
   saveMember(member: any): Promise<Member> {

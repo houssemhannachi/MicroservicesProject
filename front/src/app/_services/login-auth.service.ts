@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {StorageService} from "./storage.service";
+import {User} from "../_entities/User";
 
 const API_URL = '/server/AUTH-SERVICE/';
 const httpOptions = {
@@ -14,6 +15,9 @@ const httpOptions = {
 export class LoginAuthService {
 
   constructor(private httpClient: HttpClient) {
+  }
+  addUser(user : User):Observable<any>{
+      return this.httpClient.post(API_URL + "users",user);
   }
 
   login(email: string, password: string): Observable<any> {
