@@ -38,11 +38,13 @@ public class AccountRestController {
 
     }
     @PostMapping("/signout")
-    public String logout(HttpServletRequest request) {
+    public Map<String, Object> logout(HttpServletRequest request) {
         HttpSession session = request.getSession();
         System.out.println(session);
         session.invalidate();
-        return "Login";
+        Map<String, Object> rtn = new LinkedHashMap<>();
+        rtn.put("status", "ok");
+        return rtn;
     }
 }
 
