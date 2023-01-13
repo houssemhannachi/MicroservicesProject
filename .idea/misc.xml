@@ -10,6 +10,9 @@
         <option value="$PROJECT_DIR$/back/GatewayApplication/pom.xml" />
         <option value="$PROJECT_DIR$/Security/pom.xml" />
         <option value="$PROJECT_DIR$/back/Auth/pom.xml" />
+        <option value="$PROJECT_DIR$/back/Outil/pom.xml" />
+        <option value="$PROJECT_DIR$/Evenement/pom.xml" />
+        <option value="$PROJECT_DIR$/back/Evenement/pom.xml" />
       </list>
     </option>
   </component>

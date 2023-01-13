@@ -5,8 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/AngularSpringProject.iml" filepath="$PROJECT_DIR$/.idea/AngularSpringProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/back/Auth/Auth.iml" filepath="$PROJECT_DIR$/back/Auth/Auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/back/ConfigServer/ConfigServer.iml" filepath="$PROJECT_DIR$/back/ConfigServer/ConfigServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back/Evenement/Evenement.iml" filepath="$PROJECT_DIR$/back/Evenement/Evenement.iml" />
       <module fileurl="file://$PROJECT_DIR$/back/GatewayApplication/GatewayApplication.iml" filepath="$PROJECT_DIR$/back/GatewayApplication/GatewayApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/back/Membre/Membre.iml" filepath="$PROJECT_DIR$/back/Membre/Membre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back/Outil/Outil.iml" filepath="$PROJECT_DIR$/back/Outil/Outil.iml" />
       <module fileurl="file://$PROJECT_DIR$/back/Publication/Publication.iml" filepath="$PROJECT_DIR$/back/Publication/Publication.iml" />
       <module fileurl="file://$PROJECT_DIR$/back/Registryservice/Registryservice.iml" filepath="$PROJECT_DIR$/back/Registryservice/Registryservice.iml" />
     </modules>

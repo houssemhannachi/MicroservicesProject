@@ -4,10 +4,13 @@
     <file url="file://$PROJECT_DIR$/back/Auth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back/ConfigServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back/ConfigServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/back/Evenement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/back/Evenement/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back/GatewayApplication/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back/GatewayApplication/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back/Membre/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back/Membre/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/back/Outil/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back/Publication/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back/Publication/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/back/Registryservice/src/main/java" charset="UTF-8" />
