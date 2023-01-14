@@ -55,7 +55,7 @@ public class MemberImpl implements IMemberService {
     }
 
     public Membre findByEmail(String email) {
-        return memberRepository.findByEmail(email);
+        return (Membre) memberRepository.findByEmail(email);
     }
 
     public List<Membre> findByNom(String nom) {

@@ -5,5 +5,7 @@ export class EnseignantChercheur {
   nom: String | undefined;
   prenom: String | undefined;
   grade: String | undefined;
+  email?: string;
+  id?: number;
 
 }

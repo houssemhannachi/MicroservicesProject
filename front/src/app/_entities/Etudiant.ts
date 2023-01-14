@@ -6,4 +6,6 @@ export class Etudiant {
   nom: String | undefined;
   prenom: String | undefined;
   dateNaissance: Date | undefined;
+  email: String|undefined;
+  diplome:String|undefined
 }
