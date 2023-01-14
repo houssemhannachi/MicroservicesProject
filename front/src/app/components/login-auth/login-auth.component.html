@@ -50,14 +50,13 @@
       novalidate
     >
       <mat-card id="card" style="text-align: center;">
-        <mat-card-title>
-          login
+        <mat-card-title>Login
         </mat-card-title>
-
+          <br>
         <mat-card-content>
 
           <mat-form-field>
-            <input matInput placeholder="email"
+            <input matInput placeholder="Entrez votre email"
                    #email="ngModel"
                    [(ngModel)]="form.email"
                    name="email">
@@ -65,15 +64,15 @@
           </mat-form-field><br/>
 
           <mat-form-field>
-            <input matInput placeholder="password"  [type]="hide ? 'password' : 'text'" matInput #password="ngModel"
+            <input matInput placeholder="Entrez votre mot de passe"  [type]="hide ? 'password' : 'text'" matInput #password="ngModel"
                    [(ngModel)]="form.password"
                    name="password">
             <a (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" mat-icon-button
                matSuffix> <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </a>
 
-          </mat-form-field><br/>
-          <button mat-raised-button color="primary"  type="submit">login</button>
+          </mat-form-field><br/><br>
+          <button mat-raised-button color="primary"  type="submit">Se connecter</button>
         </mat-card-content>
       </mat-card>
     </form>

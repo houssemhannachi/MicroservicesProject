@@ -4,6 +4,7 @@ import {Publication} from "../../_entities/Publication";
 import {PublicationService} from "../../_services/publication.service";
 import {HttpClient} from "@angular/common/http";
 import {FileUploadService} from "../../_services/file-upload.service";
+import {StorageService} from "../../_services/storage.service";
 
 @Component({
   selector: 'app-publications',
@@ -13,9 +14,9 @@ import {FileUploadService} from "../../_services/file-upload.service";
 export class PublicationsComponent implements OnInit {
   dataSource!: MatTableDataSource<Publication>;
   publications: Publication[] | undefined;
-
+  user?:any;
   displayedColumns: string[] = ['id', 'titre', 'dateApparition', 'lien', 'sourcePdf'];
-  constructor(private uploadService:FileUploadService,private publicationService : PublicationService, private httpClient : HttpClient) {
+  constructor(private storageService:StorageService,private uploadService:FileUploadService,private publicationService : PublicationService, private httpClient : HttpClient) {
     this.publicationService.getAllPublications().then((res)=>{
       res.forEach(element=>{this.uploadService.getFile(element.fileDB).subscribe((file)=>{
         element.fileDB=file;
@@ -27,7 +28,7 @@ export class PublicationsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.user = this.storageService.getUser();
   }
 
   applyFilter(event: Event) {

@@ -1,4 +1,4 @@
-<div *ngIf="user.role=='Admin'" fxLayout="row" fxLayoutAlign="end center" >
+<div *ngIf="user.role=='Admin'||user.role=='Member'" fxLayout="row" fxLayoutAlign="end center" >
   <button color="primary" mat-button routerLink="/events" >
     <mat-icon>add</mat-icon>
     Ajouter un évènement

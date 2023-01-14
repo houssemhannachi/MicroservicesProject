@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="end center">
+<div fxLayout="row" *ngIf="user.role=='Admin'||user.role=='Member'" fxLayoutAlign="end center">
   <button color="primary" mat-button routerLink="/addPublication">
     <mat-icon>add</mat-icon>
     Ajouter une publication
