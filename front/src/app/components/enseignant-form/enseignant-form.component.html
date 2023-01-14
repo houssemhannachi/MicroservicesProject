@@ -1,42 +1,44 @@
-<form (ngSubmit)="ONSUB()" [formGroup]="form">
-  <h1>Ajouter un enseignant chercheur</h1>
-  <p>
-    <mat-form-field appearance="legacy">
-      <input formControlName="cin" matInput placeholder="Carte d'identité nationale">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="legacy">
-      <input formControlName="nom" matInput placeholder="Nom">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="legacy">
-      <input formControlName="prenom" matInput placeholder="Prénom">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="legacy">
-      <input formControlName="email" matInput placeholder="Email">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="legacy">
-      <input formControlName="grade" matInput placeholder="Grade">
-    </mat-form-field>
-  </p>
-  <p>
-  <p>
-    <mat-form-field appearance="legacy">
-      <input formControlName="etablissement" matInput placeholder="Etablissement">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Date de naissance</mat-label>
-      <input formControlName="dateNaissance" matInput placeholder="Date du naissance" type="date">
+<div class="container">
+  <form (ngSubmit)="ONSUB()" [formGroup]="form" class="form-bordered">
+    <br>
+    <h1 *ngIf="add" class="center-text">Ajouter un enseignant chercheur</h1>
+    <h1 *ngIf="!add" class="center-text">Editer un enseignant chercheur</h1>
 
-    </mat-form-field>
-  </p>
-  <button color="primary" mat-button type="submit">submit</button>
-</form>
+      <mat-form-field appearance="legacy" class="form-custom">
+        <input formControlName="cin" matInput placeholder="Carte d'identité nationale">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="legacy" class="form-custom">
+        <input formControlName="nom" matInput placeholder="Nom">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="legacy" class="form-custom">
+        <input formControlName="prenom" matInput placeholder="Prénom">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="legacy" class="form-custom">
+        <input formControlName="email" matInput placeholder="Email">
+      </mat-form-field>
+    <br>
+      <mat-form-field appearance="legacy" class="form-custom">
+        <input formControlName="grade" matInput placeholder="Grade">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="form-custom">
+        <input formControlName="etablissement" matInput placeholder="Etablissement">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-custom">
+        <mat-label>Date de naissance</mat-label>
+        <input formControlName="dateNaissance" matInput placeholder="Date du naissance" type="date">
+
+      </mat-form-field>
+    <br>
+
+    <button class="submit-btn" mat-raised-button color="primary" mat-button type="submit">submit</button>
+  </form>
+
+</div>

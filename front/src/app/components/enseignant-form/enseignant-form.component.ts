@@ -17,6 +17,7 @@ export class EnseignantFormComponent implements OnInit {
   currentID: any;
   itemGlobal: any;
   user : User = new User();
+  add:any=true;
 //injecter le service ds le constructure du component
   constructor(private loginAuthService:LoginAuthService,private memberService: MemberService, private enseignantService: EnseignantChercheurService, private router: Router, private ActivatedRouter: ActivatedRoute) {
   }
@@ -30,6 +31,7 @@ export class EnseignantFormComponent implements OnInit {
         console.log(item)
         this.initForm1(item);
       })
+      this.add=false;
     }
     this.initForm()
   }
