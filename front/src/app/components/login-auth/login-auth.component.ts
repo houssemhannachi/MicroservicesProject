@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginAuthService} from "../../_services/login-auth.service";
 import {StorageService} from "../../_services/storage.service";
+import {NgZone} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-auth',
@@ -16,7 +18,7 @@ export class LoginAuthComponent implements OnInit {
   };
   role: any;
 
-  constructor(private loginAuthServie: LoginAuthService, private storageService: StorageService) {
+  constructor(private ngZone:NgZone,private router:Router,private loginAuthServie: LoginAuthService, private storageService: StorageService) {
   }
 
   ngOnInit(): void {
@@ -37,7 +39,13 @@ export class LoginAuthComponent implements OnInit {
         }
       },
     })
-    console.log(this.storageService.isLoggedIn())
+    this.succesRedirect();
   }
+  succesRedirect():void {
+    this.ngZone.run(()=>{
+      this.router.navigate(['/dashboard']);
+    })
+  }
+
 
 }

@@ -21,8 +21,8 @@ public class MemberRestController {
     public Membre findOneMemberByCin(@RequestParam String cin) {
         return memberService.findByCin(cin);
     }
-    @GetMapping(value = "/membres/search/email")
-    public Membre findOneMemberByEmail(@RequestParam String email) {
+    @GetMapping(value = "/membres/email/{email}")
+    public Membre findOneMemberByEmail(@PathVariable String email) {
         return memberService.findByEmail(email);
     }
     @PostMapping(value = "/membres/enseignant")
@@ -52,6 +52,15 @@ public class MemberRestController {
         mbr.setPubs(memberService.findPublicationparauteur(id));
 
         return mbr;
+    }
+
+    @PutMapping("/members/updateEtudiant")
+    public void updateEtudiant(@RequestBody Etudiant etudiant) {
+        memberService.updateMember(etudiant);
+    }
+    @PutMapping("/members/updateEnseignant")
+    public void updateEnseignant(@RequestBody EnseignantChercheur enseignantChercheur) {
+        memberService.updateMember(enseignantChercheur);
     }
 
 }

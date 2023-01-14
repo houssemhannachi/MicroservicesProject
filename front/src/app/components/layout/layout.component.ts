@@ -10,32 +10,40 @@ import {StorageService} from "../../_services/storage.service";
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  userName: String | undefined;
+  userName: String | undefined = '';
+  user?: any;
+  loggedIn?: any = false;
 
   constructor(private authService: AuthService, private router: Router, private loginAuthService: LoginAuthService, private storageService: StorageService) {
   }
 
 
   ngOnInit(): void {
-    this.authService.getUserClaims().then((res) => {
-      this.userName = res.displayName;
-    });
+    if (this.storageService.isLoggedIn()) {
+      this.user = this.storageService.getUser();
+      this.loggedIn = true
+    }
+
 
   }
 
   logout(): void {
-    /*this.authService.doLogout().finally(
-      ()=>{this.router.navigate(['/login'])}
-    )*/
+
     this.loginAuthService.logout().subscribe({
       next: res => {
         console.log(res);
         this.storageService.clean();
+        this.reloadPage();
       },
       error: err => {
         console.log(err);
       }
     })
+
+  }
+
+  reloadPage(): void {
+    window.location.reload();
   }
 
 }

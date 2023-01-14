@@ -1,0 +1,66 @@
+<div class="center">
+  <form [formGroup]="form" *ngIf="member.typeMbr=='etd'" (ngSubmit)="editEtudiant()">
+    <h1>Modifier vos coordonnées</h1>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="cin" matInput placeholder="Carte d'identité nationale">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="nom" matInput placeholder="Nom">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="prenom" matInput placeholder="Prénom">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="email" matInput placeholder="Email">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Date de naissance</mat-label>
+        <input [matDatepicker]="picker" formControlName="dateNaissance" matInput placeholder="Date du naissance">
+        <mat-datepicker-toggle [for]="picker" matIconSuffix></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>
+    <button color="primary" mat-button type="submit">Modifier</button>
+  </form>
+  <form [formGroup]="form" (ngSubmit)="editEnseignant()" *ngIf="member.typeMbr=='ens'">
+    <h1>Modifier vos coordonnées</h1>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="cin" matInput placeholder="cin">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="nom" matInput placeholder="Nom">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="prenom" matInput placeholder="Prénom">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="etablissement" matInput placeholder="etablissement">
+      </mat-form-field>
+    </p>
+    <p>
+
+      <mat-form-field appearance="legacy">
+
+        <input formControlName="grade" matInput placeholder="grade ">
+
+      </mat-form-field>
+    </p>
+    <button color="primary" mat-button type="submit">Modifier</button>
+  </form>
+</div>

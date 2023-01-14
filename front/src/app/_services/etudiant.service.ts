@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Etudiant} from "../_entities/Etudiant";
 import {Member} from "../_entities/Member";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +17,8 @@ export class EtudiantService {
     const etudiantNew = {
       ...etudiant,
       id: etudiant.id,
-      createdDate: etudiant.createdDate ?? new Date().toISOString(),
     }
-    return this.httpClient.post<Etudiant>('/server/MEMBRE-SERVICE/membres/addEtudiant', etudiant).toPromise()
+    return this.httpClient.post<Etudiant>('/server/MEMBRE-SERVICE/membres/addEtudiant', etudiantNew).toPromise()
   }
   getEtudiantByid(id: string): Promise<Member> {
     // this.httpClient.get<Member>('adresseipduback').toPromise();a
@@ -27,5 +27,10 @@ export class EtudiantService {
     //louken l9a [0] y7outou sinon null > ?? == null
     // @ts-ignore
     return (new Promise(resolve => resolve(this.tab.filter(item => item.id === id) [0] ?? null)))
+  }
+
+  update(etudiant: Etudiant): Observable<Object> {
+    return this.httpClient.put(`/server/MEMBRE-SERVICE/members/updateEtudiant`, etudiant);
+
   }
 }

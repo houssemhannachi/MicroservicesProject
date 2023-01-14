@@ -16,13 +16,29 @@
         <input formControlName="prenom" matInput placeholder="Prénom">
       </mat-form-field>
     </p>
-
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="email" matInput placeholder="Email">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="diplome" matInput placeholder="Diplome">
+      </mat-form-field>
+    </p>
     <p>
       <mat-form-field appearance="outline">
         <mat-label>Date de naissance</mat-label>
-        <input [matDatepicker]="picker" formControlName="dateNaissance" matInput placeholder="Date du naissance">
-        <mat-datepicker-toggle [for]="picker" matIconSuffix></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <input formControlName="dateNaissance" matInput placeholder="Date du naissance" type="date">
+
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Date d'inscription</mat-label>
+        <input formControlName="dateInscription" matInput placeholder="Date d'inscription" type="date">
+
       </mat-form-field>
     </p>
     <button color="primary" mat-button type="submit">Ajouter un étudiant</button>

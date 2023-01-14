@@ -7,6 +7,7 @@ import {MemberService} from "../../_services/member.service";
 import {AuthService} from "../../_services/AuthService";
 import {LoginAuthService} from "../../_services/login-auth.service";
 import {User} from "../../_entities/User";
+import {Member} from "../../_entities/Member";
 
 @Component({
   selector: 'app-etudiant-form',
@@ -42,19 +43,24 @@ export class EtudiantFormComponent implements OnInit {
       cv: new FormControl(null, [Validators.required]),
       prenom: new FormControl(null, [Validators.required]),
       dateNaissance: new FormControl(null, [Validators.required]),
-
+      email: new FormControl(null, [Validators.required]),
+      dateInscription: new FormControl(null, [Validators.required]),
+      diplome: new FormControl(null, [Validators.required]),
 
     })
 
   }
 
-  initForm1(item: Etudiant): void {
+  initForm1(item: Member): void {
     this.form = new FormGroup({
       cin: new FormControl(item.cin),
       nom: new FormControl(item.nom),
       prenom: new FormControl(item.prenom),
       cv: new FormControl(item.cv),
-      dateNaissance: new FormControl(item.dateNaissance)
+      dateNaissance: new FormControl(item.dateNaissance),
+      email:new FormControl(item.email),
+      diplome:new FormControl(item.diplome),
+      dateInscription:new FormControl(item.dateInscription)
     })
 
   }
@@ -63,7 +69,7 @@ export class EtudiantFormComponent implements OnInit {
 
     const objectToSubmit = {...this.itemGlobal, ...this.form.value}
     this.etudiantService.saveEtudiant(objectToSubmit).then((res) => {
-      this.user.email = res.prenom;
+      this.user.email = res.email;
       this.user.password = res.cin;
       this.user.idMember = res.id;
 
