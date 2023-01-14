@@ -1,5 +1,6 @@
 package com.example.publication.entities;
 
+import com.example.publication.bean.MemberBean;
 import lombok.*;
 import reactor.util.annotation.*;
 import reactor.util.annotation.NonNull;
@@ -16,7 +17,7 @@ public class Publication {
     @NonNull
     private String titre;
     @NonNull
-    private String type;//article de journal/
+    private String type;
     @Temporal(TemporalType.DATE)
     @NonNull
     private Date dateApparition;
@@ -24,6 +25,16 @@ public class Publication {
     private String lien;
     @NonNull
     private String sourcePdf;
+
+    private int fileDB;
+
+    public int getFileDB() {
+        return fileDB;
+    }
+
+    public void setFileDB(int fileDB) {
+        this.fileDB = fileDB;
+    }
 
     public Publication(@NonNull String titre, @NonNull String type, @NonNull Date dateApparition, @NonNull String lien, @NonNull String sourcePdf) {
         this.titre = titre;

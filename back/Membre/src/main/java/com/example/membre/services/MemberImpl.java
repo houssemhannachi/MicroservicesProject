@@ -87,17 +87,16 @@ public class MemberImpl implements IMemberService {
     }
 
     @Override
-    public void affecterauteurTopublication(Long idauteur, Long idpub) {
+    public void affecterAuteurToPublication(Long idauteur, Long idpub) {
         Membre mbr = memberRepository.findById(idauteur).get();
         Publication_Membre mbs = new Publication_Membre();
         mbs.setAuteur(mbr);
         mbs.setId(new Membre_Pub_Ids(idpub, idauteur));
         membrePubRepository.save(mbs);
-
     }
 
     @Override
-    public List<PublicationBean> findPublicationparauteur(Long idauteur) {
+    public List<PublicationBean> findPublicationParAuteur(Long idauteur) {
         List<PublicationBean> pubs = new ArrayList<PublicationBean>();
         List<Publication_Membre> idpubs = membrePubRepository.findPublication_MembreByAuteur_Id(idauteur);
         idpubs.forEach(s -> {
@@ -106,7 +105,6 @@ public class MemberImpl implements IMemberService {
                     ;
                 }
         );
-
         return pubs;
     }
 }

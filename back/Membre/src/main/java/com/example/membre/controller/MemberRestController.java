@@ -21,8 +21,10 @@ public class MemberRestController {
     public Membre findOneMemberByCin(@RequestParam String cin) {
         return memberService.findByCin(cin);
     }
-    @GetMapping(value = "/membres/email/{email}")
-    public Membre findOneMemberByEmail(@PathVariable String email) {
+
+    @GetMapping(value = "/membres/search/{email}")
+    public Membre findOneMemberByEmail(@RequestParam String email) {
+
         return memberService.findByEmail(email);
     }
     @PostMapping(value = "/membres/enseignant")
@@ -47,10 +49,8 @@ public class MemberRestController {
 
     @GetMapping("/fullmember/{id}")
     public Membre findAFullMember(@PathVariable(name = "id") Long id) {
-
         Membre mbr = memberService.findMember(id);
-        mbr.setPubs(memberService.findPublicationparauteur(id));
-
+        mbr.setPubs(memberService.findPublicationParAuteur(id));
         return mbr;
     }
 

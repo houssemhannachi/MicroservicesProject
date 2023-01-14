@@ -46,7 +46,6 @@ public class MembreApplication{
     memberService.affect_etudiantToEnseignant(1L,2L);
     PublicationBean publicationBean = publicationProxyService.findPublicationById(2L);
     System.out.println(publicationBean.getTitre());
-    memberService.affecterauteurTopublication(1L,1L);
-        memberService.affecterauteurTopublication(1L,2L);
+    memberService.affecterAuteurToPublication(1L,1L);
     }*/
 }

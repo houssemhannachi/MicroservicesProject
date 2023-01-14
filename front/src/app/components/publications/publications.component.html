@@ -1,0 +1,53 @@
+<div fxLayout="row" fxLayoutAlign="end center">
+  <button color="primary" mat-button routerLink="/addPublication">
+    <mat-icon>add</mat-icon>
+    Ajouter une publication
+  </button>
+</div>
+
+<mat-form-field appearance="standard">
+  <mat-label>Filter</mat-label>
+  <input #input (keyup)="applyFilter($event)" matInput placeholder="Ex. ium">
+</mat-form-field>
+
+<table [dataSource]="dataSource" class="mat-elevation-z8" mat-table>
+
+  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+
+  <ng-container matColumnDef="id">
+    <th *matHeaderCellDef mat-header-cell>ID</th>
+    <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="titre">
+    <th *matHeaderCellDef mat-header-cell>TITRE</th>
+    <td *matCellDef="let element" mat-cell> {{element.titre}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dateApparition">
+    <th *matHeaderCellDef mat-header-cell> DATE D'APPARITION</th>
+    <td *matCellDef="let element" mat-cell> {{element.dateApparition | date :'mediumDate'}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="lien">
+    <th *matHeaderCellDef mat-header-cell>LIEN</th>
+    <td *matCellDef="let element" mat-cell> {{element.lien}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th *matHeaderCellDef mat-header-cell> TYPE</th>
+    <td *matCellDef="let element" mat-cell> {{element.type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="sourcePdf">
+    <th *matHeaderCellDef mat-header-cell>PDF SOURCE</th>
+    <td *matCellDef="let element" mat-cell> <a class="text-muted mb-0" href="{{ element.fileDB.url }}">{{ element.fileDB.name }}</a> </td>
+  </ng-container>
+
+
+</table>
+
+

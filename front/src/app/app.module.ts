@@ -35,10 +35,16 @@ import { EnseignantFormComponent } from './components/enseignant-form/enseignant
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { LoginAuthComponent } from './components/login-auth/login-auth.component';
+
+import { PublicationsComponent } from './components/publications/publications.component';
+import { PublicationFormComponent } from './components/publication-form/publication-form.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+
 import { EventListComponent } from './components/event-list/event-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+
 
 
 @NgModule({
@@ -57,10 +63,16 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     EtudiantFormComponent,
     EnseignantFormComponent,
     LoginAuthComponent,
+
+    PublicationsComponent,
+    PublicationFormComponent,
+    FileUploadComponent,
+
     EventListComponent,
     DashboardComponent,
     ProfileComponent,
     EditProfileComponent,
+
 
   ],
   imports: [

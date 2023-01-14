@@ -20,11 +20,6 @@ public class PublicationApplication implements CommandLineRunner {
     }
 
     public void run(String... args) throws Exception {
-        Publication pubs1 = new Publication("article", "an approach for testing soa systems", new Date(), "lien", "pdf");
-        Publication pubs2 = new Publication("chapitre de livre", "towards cloud computing : issues and challenges", new Date(), "lien", "pdf");
-        Publication pubs3 = new Publication("article", "introducing blochainsystems", new Date(), " lien", " pdf");
-        publicationRepository.save(pubs1);
-        publicationRepository.save(pubs2);
-        publicationRepository.save(pubs3);
+
     }
 }
