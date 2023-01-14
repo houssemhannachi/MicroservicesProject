@@ -20,6 +20,11 @@ public class MemberRestController {
     public List<Membre> findMembres() {
         return memberService.findAll();
     }
+    @GetMapping(value = "/membres/email/{email}")
+    public Membre findOneMemberByEmail(@PathVariable String email) {
+
+        return memberService.findByEmail(email);
+    }
 
     @GetMapping(value = "/membres/{id}")
     public Membre findOneMemberById(@PathVariable Long id) {
@@ -31,11 +36,7 @@ public class MemberRestController {
         return memberService.findByCin(cin);
     }
 
-    @GetMapping(value = "/membres/search/{email}")
-    public Membre findOneMemberByEmail(@RequestParam String email) {
 
-        return memberService.findByEmail(email);
-    }
 
     @GetMapping("/memberByType/{type}")
     public List<Membre> getUserByRole(@PathVariable("type") String type) {

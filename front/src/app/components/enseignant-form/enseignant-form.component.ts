@@ -72,10 +72,10 @@ export class EnseignantFormComponent implements OnInit {
       this.user.email = res.email;
       this.user.password = res.cin;
       this.user.idMember = res.id;
-
+      if(this.itemGlobal==null){
       this.loginAuthService.addUser(this.user).subscribe((userReturned)=>{
         console.log(userReturned);
-      })
+      })}
       this.router.navigate(['./members'])
     });
 

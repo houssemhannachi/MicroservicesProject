@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
       this.user = this.storageService.getUser();
       this.memberService.getMemberByEmail(this.user?.email).then(res=>{
         this.member=res;
-        console.log(this.member)
+        console.log(res)
       })
 
 
