@@ -35,6 +35,9 @@ import { EnseignantFormComponent } from './components/enseignant-form/enseignant
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { LoginAuthComponent } from './components/login-auth/login-auth.component';
+import { PublicationsComponent } from './components/publications/publications.component';
+import { PublicationFormComponent } from './components/publication-form/publication-form.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 
 @NgModule({
@@ -53,6 +56,9 @@ import { LoginAuthComponent } from './components/login-auth/login-auth.component
     EtudiantFormComponent,
     EnseignantFormComponent,
     LoginAuthComponent,
+    PublicationsComponent,
+    PublicationFormComponent,
+    FileUploadComponent,
 
   ],
   imports: [

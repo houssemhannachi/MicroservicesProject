@@ -11,8 +11,8 @@
         <module name="Outil" />
         <module name="Registryservice" />
         <module name="GatewayApplication" />
-        <module name="Auth" />
         <module name="Membre" />
+        <module name="Auth" />
         <module name="Publication" />
         <module name="ConfigServer" />
       </profile>

@@ -30,7 +30,7 @@ public interface IMemberService {
 
     void affect_etudiantToEnseignant(Long idEtudiant, Long idEnseignant);
 
-    public void affecterauteurTopublication(Long idauteur, Long idpub);
+    public void affecterAuteurToPublication(Long idauteur, Long idpub);
 
-    public List<PublicationBean>findPublicationparauteur(Long idauteur);
+    public List<PublicationBean>findPublicationParAuteur(Long idauteur);
 }

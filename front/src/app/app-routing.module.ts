@@ -9,12 +9,16 @@ import {AddMemberComponent} from "./components/add-member/add-member.component";
 import {EtudiantFormComponent} from "./components/etudiant-form/etudiant-form.component";
 import {EnseignantFormComponent} from "./components/enseignant-form/enseignant-form.component";
 import {LoginAuthComponent} from "./components/login-auth/login-auth.component";
+import {PublicationsComponent} from "./components/publications/publications.component";
+import {PublicationFormComponent} from "./components/publication-form/publication-form.component";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path: 'members', pathMatch: 'full', component: MembersComponent},
+  {path: 'publications', pathMatch: 'full', component: PublicationsComponent},
   {path: 'create', pathMatch: 'full', component: MemberFormComponent},
   {path: 'createEtudiant', pathMatch: 'full', component: EtudiantFormComponent},
+  {path: 'addPublication', pathMatch: 'full', component: PublicationFormComponent},
   {path: 'createEnseignant', pathMatch: 'full', component: EnseignantFormComponent},
   {path: 'loginAuth', pathMatch: 'full', component: LoginAuthComponent},
   {path: 'tools', pathMatch: 'full', component: ToolsComponent},

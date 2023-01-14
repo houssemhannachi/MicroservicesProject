@@ -21,4 +21,14 @@ public class PublicationImpl implements IPublicationService{
     public Publication findById(Long id) {
         return publicationRepository.findById(id).get();
     }
+
+    @Override
+    public Publication add(Publication publication) {
+        return publicationRepository.save(publication);
+    }
+
+    @Override
+    public void delete(Long id) {
+        publicationRepository.deleteById(id);
+    }
 }
