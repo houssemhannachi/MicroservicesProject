@@ -21,7 +21,7 @@ export class PublicationService {
     return this.httpClient.delete<string>(`/server/PUBLICATION-SERVICE/deletePublication/${id}`).toPromise()
   }
 
-  getAllMembers(): Promise<Publication []> {
+  getAllPublications(): Promise<Publication []> {
     return this.httpClient.get<Publication[]>(  '/server/PUBLICATION-SERVICE/publications').toPromise();
   }
 

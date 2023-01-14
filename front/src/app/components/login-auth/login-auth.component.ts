@@ -33,6 +33,7 @@ export class LoginAuthComponent implements OnInit {
           this.storageService.saveUser(data);
           this.isLoggedIn = true;
           this.role = this.storageService.getUser();
+          window.location.reload();
         }
         else {
           console.log("bad credentials")

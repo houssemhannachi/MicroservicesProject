@@ -1,20 +1,15 @@
-.example-card {
-  margin-top: 40px;
-  max-width: 250px;
-  max-height: 350px;
-}
-
 .example-header-image {
   background-size: cover;
 }
-.width50 {
-  width: 20%;
-}
-.aParent div {
-  align-items: center;
-  float: left;
+.container{
   display: flex;
+  align-items: center;
   justify-content: center;
-
-
+  height: 80%;
+}
+.dashboard-items{
+  margin-top: 30px;
+  padding-left :30px;
+  height: 100%;
+  width: 300px;
 }
