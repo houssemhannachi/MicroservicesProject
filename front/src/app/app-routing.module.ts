@@ -17,6 +17,7 @@ import {EventListComponent} from "./components/event-list/event-list.component";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {EditProfileComponent} from "./components/edit-profile/edit-profile.component";
+import {AffectationComponent} from "./components/affectation/affectation.component";
 
 
 const routes: Routes = [
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path: 'login', pathMatch: 'full', component: LoginComponent},
   {path: 'dashboard', pathMatch: 'full', component: DashboardComponent},
   {path:'editProfile/:id',component:EditProfileComponent},
+  {path:'affectation/:id',component:AffectationComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'members'},
 
 ];

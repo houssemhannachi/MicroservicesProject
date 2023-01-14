@@ -26,6 +26,10 @@ export class MemberService {
 
   }
 
+  getMemberByType(type:string|undefined):Observable<any> {
+    return this.httpClient.get<any>(`/server/MEMBRE-SERVICE/memberByType/${type}`)
+  }
+
   getMemberByid(id: number | undefined): Promise<Member> {
     return this.httpClient.get<Member>(`/server/MEMBRE-SERVICE/membres/${id}`).toPromise();
   }
@@ -40,6 +44,11 @@ export class MemberService {
 
   getAllMembers(): Promise<Member []> {
     return this.httpClient.get<Member[]>(API_URL + 'membres').toPromise();
+  }
+
+  affecterEnseignant(idEtudiant:number,idEnseignant:number):Observable<any> {
+
+    return this.httpClient.post<any>(API_URL+ `members/affecter/${idEtudiant}/${idEnseignant}`,idEnseignant);
   }
 
 

@@ -33,7 +33,7 @@ import { AddMemberComponent } from './components/add-member/add-member.component
 import { EtudiantFormComponent } from './components/etudiant-form/etudiant-form.component';
 import { EnseignantFormComponent } from './components/enseignant-form/enseignant-form.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatNativeDateModule} from "@angular/material/core";
+import {MatNativeDateModule, MatOptionModule} from "@angular/material/core";
 import { LoginAuthComponent } from './components/login-auth/login-auth.component';
 
 import { PublicationsComponent } from './components/publications/publications.component';
@@ -44,6 +44,8 @@ import { EventListComponent } from './components/event-list/event-list.component
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { AffectationComponent } from './components/affectation/affectation.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 
@@ -72,6 +74,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     DashboardComponent,
     ProfileComponent,
     EditProfileComponent,
+    AffectationComponent,
 
 
   ],
@@ -99,6 +102,8 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatOptionModule,
+    MatSelectModule,
 
 
   ],

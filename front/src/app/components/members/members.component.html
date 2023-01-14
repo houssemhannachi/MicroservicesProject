@@ -33,13 +33,13 @@
 
 
   <ng-container matColumnDef="cv">
-    <th *matHeaderCellDef mat-header-cell>CV</th>
-    <td *matCellDef="let element" mat-cell> {{element.cv}} </td>
+    <th *matHeaderCellDef mat-header-cell>EMAIL</th>
+    <td *matCellDef="let element" mat-cell> {{element.email}} </td>
   </ng-container>
 
   <ng-container matColumnDef="type">
-    <th *matHeaderCellDef mat-header-cell> TYPE</th>
-    <td *matCellDef="let element" mat-cell> {{element.type}} </td>
+    <th *matHeaderCellDef mat-header-cell> ENS/ETD</th>
+    <td *matCellDef="let element" mat-cell> {{element.typeMbr == 'etd' ? 'Etudiant' : 'Enseignant'}} {{element.encadrant!=null?'affecté à '+element.encadrant.nom+' '+element.encadrant.prenom:''}} </td>
   </ng-container>
 
   <ng-container matColumnDef="createdDate">
@@ -49,16 +49,23 @@
 
   <ng-container matColumnDef="cc">
 
-    <th *matHeaderCellDef mat-header-cell></th>
+    <th *matHeaderCellDef mat-header-cell>ACTIONS</th>
     <td *matCellDef="let element" mat-cell>
-      <button color="primary" *ngIf="element.typeMbr=='etd'&&user.role=='Admin'" mat-button routerLink="{{element.id}}/editStudent">
+      <button *ngIf="element.typeMbr=='etd'&&user.role=='Admin'" color="primary" mat-button
+              routerLink="{{element.id}}/editStudent">
         <mat-icon>edit</mat-icon>
       </button>
-      <button color="primary" *ngIf="element.typeMbr=='ens'&&user.role=='Admin'" mat-button routerLink="{{element.id}}/editTeacher">
+
+      <button *ngIf="element.typeMbr=='ens'&&user.role=='Admin'" color="primary" mat-button
+              routerLink="{{element.id}}/editTeacher">
         <mat-icon>edit</mat-icon>
       </button>
       <button (click)="ONDelete(element.id)" *ngIf="user.role=='Admin'" color="primary" mat-button>
         <mat-icon>delete</mat-icon>
+      </button>
+      <button *ngIf="element.typeMbr=='etd'&&user.role=='Admin'&&element.encadrant==null" color="primary" mat-button
+              routerLink="/affectation/{{element.id}}">
+        Affecter
       </button>
     </td>
 

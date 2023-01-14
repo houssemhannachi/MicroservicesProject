@@ -10,6 +10,7 @@ import java.util.*;
 public interface MembreRepository extends JpaRepository<Membre, Long> {
     Membre findByCin(String cin);
 
+    List<Membre> findMembreByTypeMbr(String type);
     List<Membre> findByNomStartingWith(String caractere);
 
     Membre findByEmail(String email);

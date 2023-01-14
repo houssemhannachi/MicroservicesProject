@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Affecter étudiant à un enseignant</h1>
+  <form (ngSubmit)="affecterEnseignant()">
+    <mat-form-field appearance="fill">
+      <mat-label>Liste des enseignants</mat-label>
+
+      <mat-select [(ngModel)]="selectedValue" name="ens" >
+        <mat-option *ngFor="let ens of enseignants" [value]="ens.id">
+          {{ens.nom}} {{ens.prenom}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button color="warn" mat-button type="submit">Affecter</button>
+  </form>
+</div>
