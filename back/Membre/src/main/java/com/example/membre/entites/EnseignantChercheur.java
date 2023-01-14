@@ -35,10 +35,11 @@ public class EnseignantChercheur extends Membre implements Serializable {
     }
 
 
-    public EnseignantChercheur(String cin, String nom, String prenom, Date dateNaissance, byte[] photo, String cv, String email, String password, String grade, String etablissement) {
+    public EnseignantChercheur(String cin, String nom, String prenom, Date dateNaissance, byte[] photo, String cv, String email, String password, String grade, String etablissement,List<Etudiant> etudiant) {
         super(cin, nom, prenom, dateNaissance, photo, cv, email, password);
         this.grade = grade;
         this.etablissement = etablissement;
+        this.etudiant=etudiant;
     }
 
     public EnseignantChercheur() {

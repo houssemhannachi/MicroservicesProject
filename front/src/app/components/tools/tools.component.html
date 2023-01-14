@@ -1,1 +1,37 @@
-<p>tools works!</p>
+<div *ngIf="user.role=='Admin'" fxLayout="row" fxLayoutAlign="end center">
+  <button color="primary" mat-button routerLink="/addTool">
+    <mat-icon>add</mat-icon>
+    Ajouter un outil
+  </button>
+</div>
+
+<br>
+<table [dataSource]="dataSource" class="mat-elevation-z8" mat-table>
+
+  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+
+  <ng-container matColumnDef="source">
+    <th *matHeaderCellDef mat-header-cell>Source</th>
+    <td *matCellDef="let element" mat-cell> {{element.sourceOutil}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="date">
+    <th *matHeaderCellDef mat-header-cell>Date</th>
+    <td *matCellDef="let element" mat-cell> {{element.dateOutil|date:'MMMM d, y'}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="cc">
+
+    <th *matHeaderCellDef mat-header-cell></th>
+    <td *matCellDef="let element" mat-cell>
+
+    </td>
+
+  </ng-container>
+
+
+</table>

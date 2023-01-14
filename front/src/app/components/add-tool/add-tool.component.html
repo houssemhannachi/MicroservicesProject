@@ -1,0 +1,13 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <form (ngSubmit)="addOutil()" [formGroup]="form">
+    <mat-card class="demo-inline-calendar-card">
+      <mat-calendar [(selected)]="selected"></mat-calendar>
+    </mat-card>
+    <p>
+      <mat-form-field appearance="legacy">
+        <input formControlName="sourceOutil" matInput placeholder="Source">
+      </mat-form-field>
+    </p>
+    <button color="primary" mat-button type="submit">Ajouter un outil</button>
+  </form>
+</div>

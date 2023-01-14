@@ -18,6 +18,7 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {EditProfileComponent} from "./components/edit-profile/edit-profile.component";
 import {AffectationComponent} from "./components/affectation/affectation.component";
+import {AddToolComponent} from "./components/add-tool/add-tool.component";
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'loginAuth', pathMatch: 'full', component: LoginAuthComponent},
   {path: 'tools', pathMatch: 'full', component: ToolsComponent},
   {path: 'events', pathMatch: 'full', component: EventsComponent},
+  {path: 'addTool', pathMatch: 'full', component: AddToolComponent},
   {path: 'eventsList', pathMatch: 'full', component: EventListComponent},
   {path: 'addMember', pathMatch: 'full', component: AddMemberComponent},
   {
