@@ -1,0 +1,43 @@
+<div *ngIf="user.role=='Admin'" fxLayout="row" fxLayoutAlign="end center" >
+  <button color="primary" mat-button routerLink="/events" >
+    <mat-icon>add</mat-icon>
+    Ajouter un évènement
+  </button>
+</div>
+
+<br>
+<table [dataSource]="dataSource" class="mat-elevation-z8" mat-table>
+
+  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+
+  <ng-container matColumnDef="titre">
+    <th *matHeaderCellDef mat-header-cell>Titre</th>
+    <td *matCellDef="let element" mat-cell> {{element.titreEvent}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lieu">
+    <th *matHeaderCellDef mat-header-cell>Lieu</th>
+    <td *matCellDef="let element" mat-cell> {{element.lieuEvent}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <th *matHeaderCellDef mat-header-cell>Date</th>
+    <td *matCellDef="let element" mat-cell> {{element.dateEvent|date:'MMMM d, y'}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="cc">
+
+    <th *matHeaderCellDef mat-header-cell></th>
+    <td *matCellDef="let element" mat-cell>
+
+    </td>
+
+  </ng-container>
+
+
+</table>
+
+

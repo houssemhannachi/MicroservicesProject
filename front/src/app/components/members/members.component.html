@@ -51,13 +51,13 @@
 
     <th *matHeaderCellDef mat-header-cell></th>
     <td *matCellDef="let element" mat-cell>
-      <button color="primary" *ngIf="element.typeMbr=='etd'" mat-button routerLink="{{element.id}}/editStudent">
+      <button color="primary" *ngIf="element.typeMbr=='etd'&&user.role=='Admin'" mat-button routerLink="{{element.id}}/editStudent">
         <mat-icon>edit</mat-icon>
       </button>
-      <button color="primary" *ngIf="element.typeMbr=='ens'" mat-button routerLink="{{element.id}}/editTeacher">
+      <button color="primary" *ngIf="element.typeMbr=='ens'&&user.role=='Admin'" mat-button routerLink="{{element.id}}/editTeacher">
         <mat-icon>edit</mat-icon>
       </button>
-      <button (click)="ONDelete(element.id)" color="primary" mat-button>
+      <button (click)="ONDelete(element.id)" *ngIf="user.role=='Admin'" color="primary" mat-button>
         <mat-icon>delete</mat-icon>
       </button>
     </td>

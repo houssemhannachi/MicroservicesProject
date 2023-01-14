@@ -26,8 +26,12 @@ export class MemberService {
 
   }
 
-  getMemberByid(id: string|undefined): Promise<Member> {
+  getMemberByid(id: number | undefined): Promise<Member> {
     return this.httpClient.get<Member>(`/server/MEMBRE-SERVICE/membres/${id}`).toPromise();
+  }
+
+  getMemberByEmail(email: String|undefined): Promise<Member> {
+    return this.httpClient.get<Member>(`/server/MEMBRE-SERVICE/membres/email/${email}`).toPromise();
   }
 
   deleteMemberById(id: string): Promise<string> {
