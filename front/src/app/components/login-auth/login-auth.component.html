@@ -1,34 +1,83 @@
-<div class="example-container">
-  <form
-    #f="ngForm"
-    (ngSubmit)="onSubmit()"
+<!--<div class="example-container">-->
+<!--  <form-->
+<!--    #f="ngForm"-->
+<!--    (ngSubmit)="onSubmit()"-->
 
-    name="form"
-    novalidate
-  >
-  <mat-form-field appearance="fill">
-    <mat-label>Enter your email</mat-label>
-    <input class="example-right-align" matInput type="text"
-           #email="ngModel"
-           [(ngModel)]="form.email"
-           name="email">
+<!--    name="form"-->
+<!--    novalidate-->
+<!--  >-->
+<!--  <mat-form-field appearance="fill">-->
+<!--    <mat-label>Enter your email</mat-label>-->
+<!--    <input class="example-right-align" matInput type="text"-->
+<!--           #email="ngModel"-->
+<!--           [(ngModel)]="form.email"-->
+<!--           name="email">-->
 
-  </mat-form-field>
+<!--  </mat-form-field>-->
 
-  <mat-form-field appearance="fill">
+<!--  <mat-form-field appearance="fill">-->
 
-    <mat-label>Enter your password</mat-label>
-    <input [type]="hide ? 'password' : 'text'" matInput #password="ngModel"
-           [(ngModel)]="form.password"
-    name="password">
-    <button (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" mat-icon-button
-            matSuffix>
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-  </mat-form-field>
+<!--    <mat-label>Enter your password</mat-label>-->
+<!--    <input [type]="hide ? 'password' : 'text'" matInput #password="ngModel"-->
+<!--           [(ngModel)]="form.password"-->
+<!--    name="password">-->
+<!--    <a (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" mat-icon-button-->
+<!--            matSuffix>-->
+<!--      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+<!--    </a>-->
+<!--  </mat-form-field>-->
 
-  <button color="primary" mat-button>
-    Login
-  </button>
-  </form>
+<!--  <button color="primary" mat-button type="submit">-->
+<!--    Login-->
+<!--  </button>-->
+<!--  </form>-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="form-login">
+    <form
+      #f="ngForm"
+      (ngSubmit)="onSubmit()"
+      name="form"
+      novalidate
+    >
+      <mat-card id="card" style="text-align: center;">
+        <mat-card-title>
+          login
+        </mat-card-title>
+
+        <mat-card-content>
+
+          <mat-form-field>
+            <input matInput placeholder="email"
+                   #email="ngModel"
+                   [(ngModel)]="form.email"
+                   name="email">
+
+          </mat-form-field><br/>
+
+          <mat-form-field>
+            <input matInput placeholder="password"  [type]="hide ? 'password' : 'text'" matInput #password="ngModel"
+                   [(ngModel)]="form.password"
+                   name="password">
+            <a (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" mat-icon-button
+               matSuffix> <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </a>
+
+          </mat-form-field><br/>
+          <button mat-raised-button color="primary"  type="submit">login</button>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+
 </div>
+

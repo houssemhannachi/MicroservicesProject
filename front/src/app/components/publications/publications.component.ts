@@ -16,7 +16,7 @@ export class PublicationsComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'titre', 'dateApparition', 'lien', 'sourcePdf'];
   constructor(private uploadService:FileUploadService,private publicationService : PublicationService, private httpClient : HttpClient) {
-    this.publicationService.getAllMembers().then((res)=>{
+    this.publicationService.getAllPublications().then((res)=>{
       res.forEach(element=>{this.uploadService.getFile(element.fileDB).subscribe((file)=>{
         element.fileDB=file;
       });

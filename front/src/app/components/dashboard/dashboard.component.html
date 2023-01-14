@@ -1,7 +1,7 @@
-<div class="aParent">
+<div class="container">
 
-  <div class="width50">
-    <mat-card class="example-card">
+  <div class="dashboard-items">
+    <mat-card >
       <mat-card-header>
         <div class="example-header-image" mat-card-avatar><img mat-card-image
                                                                src="assets/img/membres.png"></div>
@@ -14,12 +14,12 @@
         </h2>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button routerLink="/members">Consulter la liste des membres</button>
+        <button mat-raised-button color="primary" routerLink="/members">Consulter la liste des membres</button>
       </mat-card-actions>
     </mat-card>
   </div>
-  <div class="width50">
-    <mat-card class="example-card">
+  <div class="dashboard-items">
+    <mat-card>
       <mat-card-header>
         <div class="example-header-image" mat-card-avatar><img mat-card-image
                                                                src="assets/img/membres.png"></div>
@@ -27,15 +27,15 @@
         <mat-card-subtitle>Nombre des publications</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <h2>X</h2>
+        <h2>{{publicationCount}}</h2>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button routerLink="/publications">Consulter la liste des publications</button>
+        <button mat-raised-button color="primary" routerLink="/publications">Consulter la liste des publications</button>
       </mat-card-actions>
     </mat-card>
   </div>
-  <div class="width50">
-    <mat-card class="example-card">
+  <div class="dashboard-items">
+    <mat-card >
       <mat-card-header>
         <div class="example-header-image" mat-card-avatar><img alt="Photo of a Shiba Inu" mat-card-image
                                                                src="assets/img/membres.png"></div>
@@ -46,12 +46,12 @@
         <h2>{{eventsCount}}</h2>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button routerLink="/eventsList">Consulter la liste des évènements</button>
+        <button mat-raised-button color="primary"  routerLink="/eventsList">Consulter la liste des évènements</button>
       </mat-card-actions>
     </mat-card>
   </div>
-  <div class="width50">
-    <mat-card class="example-card">
+  <div class="dashboard-items">
+    <mat-card >
       <mat-card-header>
         <div class="example-header-image" mat-card-avatar><img alt="Photo of a Shiba Inu" mat-card-image
                                                                src="assets/img/membres.png"></div>
@@ -59,10 +59,10 @@
         <mat-card-subtitle>Nombre des outils</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <h2>X</h2>
+        <h2>200</h2>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button routerLink="/outils">Consulter la liste des outils</button>
+        <button mat-raised-button color="primary" mat-button routerLink="/outils">Consulter la liste des outils</button>
       </mat-card-actions>
     </mat-card>
   </div>

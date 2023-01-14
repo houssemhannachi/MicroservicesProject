@@ -3,6 +3,7 @@ import {MemberService} from "../../_services/member.service";
 import {Member} from "../../_entities/Member";
 import {EventService} from "../../_services/event.service";
 import {Event} from "../../_entities/Event";
+import {PublicationService} from "../../_services/publication.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,9 @@ export class DashboardComponent implements OnInit {
   membersCount?:number=0;
   events:Event[]|undefined;
   eventsCount?:number;
-  constructor(private memberService: MemberService,private eventService:EventService) { }
+  publicationCount?:number;
+  toolsCount?:number;
+  constructor(private memberService: MemberService,private eventService:EventService,private publicationService : PublicationService) { }
 
   ngOnInit(): void {
     this.memberService.getAllMembers().then(res=>{
@@ -25,6 +28,10 @@ export class DashboardComponent implements OnInit {
       this.events=res;
       this.eventsCount=this.events.length
     })
+    this.publicationService.getAllPublications().then((res=>{
+      this.publicationCount = res.length;
+    }));
+
   }
 
 }
