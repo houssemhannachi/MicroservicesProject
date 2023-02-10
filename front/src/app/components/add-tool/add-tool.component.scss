@@ -1,4 +1,20 @@
-.container {
-  width: 300px;
-  height: 600px;
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+.item{
+  width: auto;
+}
+
+.form-custom{
+}
+.form-bordered{
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow:  5px 8px 7px #343232;
+  width:300px;
+}
+.submit-btn{
 }

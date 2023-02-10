@@ -1,24 +1,25 @@
- <form (ngSubmit)="addPublication()" [formGroup]="form">
+<div class="container">
+  <form (ngSubmit)="addPublication()" [formGroup]="form" class="form-bordered">
     <h1>Ajouter une publication</h1>
-    <p>
+
       <mat-form-field appearance="legacy">
         <input formControlName="titre" matInput placeholder="Titre">
       </mat-form-field>
-    </p>
-   <p>
-     <mat-form-field appearance="outline">
-       <mat-label>dateApparition</mat-label>
-       <input [matDatepicker]="picker" formControlName="dateApparition" matInput placeholder="Date d'apparition">
-       <mat-datepicker-toggle [for]="picker" matIconSuffix></mat-datepicker-toggle>
-       <mat-datepicker #picker></mat-datepicker>
-     </mat-form-field>
-   </p>
-   <div class="form-group">
-     <label><b>Curriculum vitea</b> *</label>
-     <app-file-upload (cv)="setCv($event)"></app-file-upload>
-   </div>
+    <br>
 
+      <mat-form-field appearance="outline">
+        <mat-label>dateApparition</mat-label>
+        <input [matDatepicker]="picker" formControlName="dateApparition" matInput placeholder="Date d'apparition">
+        <mat-datepicker-toggle [for]="picker" matIconSuffix></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
 
-
-    <button color="primary" mat-button type="submit">Ajouter une publication</button>
+    <div class="form-group">
+      <label><b>Curriculum vitea</b> *</label>
+      <app-file-upload (cv)="setCv($event)"></app-file-upload>
+    </div>
+    <br>
+    <button mat-raised-button color="primary" mat-button type="submit">Ajouter une publication</button>
   </form>
+</div>
+

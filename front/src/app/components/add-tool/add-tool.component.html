@@ -1,13 +1,17 @@
-<div class="container" xmlns="http://www.w3.org/1999/html">
-  <form (ngSubmit)="addOutil()" [formGroup]="form">
-    <mat-card class="demo-inline-calendar-card">
-      <mat-calendar [(selected)]="selected"></mat-calendar>
-    </mat-card>
-    <p>
-      <mat-form-field appearance="legacy">
-        <input formControlName="sourceOutil" matInput placeholder="Source">
-      </mat-form-field>
-    </p>
-    <button color="primary" mat-button type="submit">Ajouter un outil</button>
-  </form>
+<div class="container" >
+  <div class="item">
+    <form (ngSubmit)="addOutil()" [formGroup]="form" class="form-bordered">
+      <h2>Ajouter un outil</h2>
+      <mat-card class="demo-inline-calendar-card form-custom" >
+        <mat-calendar [(selected)]="selected"></mat-calendar>
+      </mat-card>
+      <br>
+        <mat-form-field appearance="legacy" class="form-custom">
+          <input formControlName="sourceOutil" matInput placeholder="Source">
+        </mat-form-field>
+      <br>
+      <button class="submit-btn" mat-raised-button color="primary" mat-button type="submit">Ajouter un outil</button>
+    </form>
+  </div>
+
 </div>

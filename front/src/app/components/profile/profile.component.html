@@ -1,21 +1,26 @@
-<mat-card *ngIf="member" class="example-card">
+<div class="container">
+  <div class="center form-bordered">
+    <mat-card *ngIf="member" class="example-card">
 
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>{{member.nom}} {{member.prenom}}</mat-card-title>
-      <mat-card-subtitle>{{member.email}}</mat-card-subtitle>
-      <img mat-card-md-image src="assets/img/membres.png">
-      <button color="primary" mat-button routerLink="/editProfile/{{member.id}}">
-        <mat-icon style="float:right">edit</mat-icon>
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{member.nom}} {{member.prenom}}</mat-card-title>
+          <mat-card-subtitle>{{member.email}}</mat-card-subtitle>
+          <img mat-card-md-image src="assets/img/membres.png">
+          <button color="primary" mat-button routerLink="/editProfile/{{member.id}}">
+            <mat-icon style="float:right">edit</mat-icon>
 
-      </button>
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    <span *ngIf="member.typeMbr=='ens'">Grade : {{member.grade}}<br></span>
-    <span *ngIf="member.typeMbr=='ens'">Etablissement : {{member.etablissement}}<br></span>
-    <span *ngIf="member.typeMbr=='etd'">Diplome : {{member.diplome}}<br></span>
-    <span *ngIf="member.typeMbr=='etd'">Date d'inscription : {{member.dateInscription|date:'MMMM d, y'}}<br></span>
-    Date de naissance : {{member.dateNaissance|date:'MMMM d, y'}}
-  </mat-card-content>
-</mat-card>
+          </button>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <span *ngIf="member.typeMbr=='ens'">Grade : {{member.grade}}<br></span>
+        <span *ngIf="member.typeMbr=='ens'">Etablissement : {{member.etablissement}}<br></span>
+        <span *ngIf="member.typeMbr=='etd'">Diplome : {{member.diplome}}<br></span>
+        <span *ngIf="member.typeMbr=='etd'">Date d'inscription : {{member.dateInscription|date:'MMMM d, y'}}<br></span>
+        Date de naissance : {{member.dateNaissance|date:'MMMM d, y'}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

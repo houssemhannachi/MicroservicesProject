@@ -1,0 +1,22 @@
+.center {
+  width: auto;
+  height: 80%;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-custom{
+  margin-left: 20px;
+}
+.form-bordered{
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow:  5px 8px 7px #343232;
+}
+.submit-btn{
+  margin-left: 2%;
+}
